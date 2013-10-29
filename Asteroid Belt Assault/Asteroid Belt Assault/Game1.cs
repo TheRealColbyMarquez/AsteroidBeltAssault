@@ -37,7 +37,7 @@ namespace Asteroid_Belt_Assault
         private float playerDeathDelayTime = 10f;
         private float playerDeathTimer = 0f;
         private float titleScreenTimer = 0f;
-        private float titleScreenDelayTime = 1f;
+        private float titleScreenDelayTime = 1f;    
 
         private int playerStartingLives = 3;
         private Vector2 playerStartLocation = new Vector2(390, 550);

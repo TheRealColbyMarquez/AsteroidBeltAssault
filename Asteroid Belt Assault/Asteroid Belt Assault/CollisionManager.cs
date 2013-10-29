@@ -77,6 +77,7 @@ namespace Asteroid_Belt_Assault
                 {
                     shot.Location = offScreen;
                     playerManager.Destroyed = true;
+                    SoundManager.PlayDeath();
                     explosionManager.AddExplosion(
                         playerManager.playerSprite.Center,
                         Vector2.Zero);
