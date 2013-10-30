@@ -23,6 +23,9 @@ namespace Asteroid_Belt_Assault
         GameStates gameState = GameStates.TitleScreen;
         Texture2D titleScreen;
         Texture2D spriteSheet;
+        Song titleMusic;
+        bool songstart = true;
+
 
         StarField starField;
         AsteroidManager asteroidManager;
