@@ -6,6 +6,7 @@ using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Media;
 
 
 namespace Asteroid_Belt_Assault
@@ -19,6 +20,7 @@ namespace Asteroid_Belt_Assault
         private static SoundEffect playerShot;
         private static SoundEffect enemyShot;
         private static SoundEffect playerDead;
+        private static Song menuMusic;
 
         private static Random rand = new Random();
 
@@ -29,6 +31,9 @@ namespace Asteroid_Belt_Assault
                 playerShot = content.Load<SoundEffect>(@"Sounds\Shot1");
                 enemyShot = content.Load<SoundEffect>(@"Sounds\Shot2");
                 playerDead = content.Load<SoundEffect>(@"Sounds\inceptionbutton");
+                menuMusic = content.Load<Song>(@"Sounds\titleMusic");
+
+                
 
                 for (int x = 1; x <= explosionCount; x++)
                 {
@@ -41,6 +46,16 @@ namespace Asteroid_Belt_Assault
             {
                 Debug.Write("SoundManager Initialization Failed");
             }
+        }
+
+        public static void PlayMenuSong()
+        {
+            MediaPlayer.Play(menuMusic);
+        }
+
+        public static void StopMenuSong()
+        {
+            MediaPlayer.Stop();
         }
 
         public static void PlayExplosion()

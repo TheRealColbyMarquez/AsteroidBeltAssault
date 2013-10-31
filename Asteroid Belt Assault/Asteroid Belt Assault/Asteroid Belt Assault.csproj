@@ -104,7 +104,6 @@
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
-    <Content Include="titleMusic.mp3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Asteroid Belt AssaultContent\Asteroid Belt AssaultContent.contentproj">
