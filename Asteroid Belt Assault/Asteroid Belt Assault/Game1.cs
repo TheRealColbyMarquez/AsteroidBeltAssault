@@ -23,8 +23,6 @@ namespace Asteroid_Belt_Assault
         GameStates gameState = GameStates.TitleScreen;
         Texture2D titleScreen;
         Texture2D spriteSheet;
-        Song titleMusic;
-        bool songstart = true;
 
 
         StarField starField;
@@ -32,7 +30,7 @@ namespace Asteroid_Belt_Assault
         PlayerManager playerManager;
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
-
+        PowerupManager powerupManager;
         CollisionManager collisionManager;
 
         SpriteFont pericles14;
@@ -94,6 +92,8 @@ namespace Asteroid_Belt_Assault
                 20,
                 this.Window.ClientBounds.Width,
                 this.Window.ClientBounds.Height);
+
+            powerupManager = new PowerupManager();
 
             playerManager = new PlayerManager(
                 spriteSheet,    
@@ -227,6 +227,7 @@ namespace Asteroid_Belt_Assault
                     enemyManager.Update(gameTime);
                     playerManager.PlayerShotManager.Update(gameTime);
                     explosionManager.Update(gameTime);
+                    powerupManager.Update(gameTime);
 
                     if (playerDeathTimer >= playerDeathDelayTime)
                     {
@@ -281,7 +282,7 @@ namespace Asteroid_Belt_Assault
                 playerManager.Draw(spriteBatch);
                 enemyManager.Draw(spriteBatch);
                 explosionManager.Draw(spriteBatch);
-
+                powerupManager.Draw(spriteBatch);
                 spriteBatch.DrawString(
                     pericles14,
                     "Score: " + playerManager.PlayerScore.ToString(),
