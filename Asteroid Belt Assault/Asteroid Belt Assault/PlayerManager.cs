@@ -11,7 +11,7 @@ namespace Asteroid_Belt_Assault
     class PlayerManager
     {
         public Sprite playerSprite;
-        private float playerSpeed = 160.0f;
+        public float playerSpeed = 160.0f;
         private Rectangle playerAreaLimit;
 
         public long PlayerScore = 0;
@@ -62,6 +62,8 @@ namespace Asteroid_Belt_Assault
             }
             playerSprite.CollisionRadius = playerRadius;
         }
+
+        
 
         private void FireShot()
         {

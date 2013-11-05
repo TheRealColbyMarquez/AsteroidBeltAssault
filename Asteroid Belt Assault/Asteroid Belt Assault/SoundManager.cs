@@ -21,6 +21,7 @@ namespace Asteroid_Belt_Assault
         private static SoundEffect enemyShot;
         private static SoundEffect playerDead;
         private static Song menuMusic;
+        public static Song speedSound;
 
         private static Random rand = new Random();
 
@@ -32,6 +33,7 @@ namespace Asteroid_Belt_Assault
                 enemyShot = content.Load<SoundEffect>(@"Sounds\Shot2");
                 playerDead = content.Load<SoundEffect>(@"Sounds\inceptionbutton");
                 menuMusic = content.Load<Song>(@"Sounds\titleMusic");
+                speedSound = content.Load<SoundEffect>(@"Sounds\speedSound");
 
                 
 

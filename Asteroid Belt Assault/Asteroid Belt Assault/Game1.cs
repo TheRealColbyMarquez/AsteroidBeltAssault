@@ -93,7 +93,7 @@ namespace Asteroid_Belt_Assault
                 this.Window.ClientBounds.Width,
                 this.Window.ClientBounds.Height);
 
-            powerupManager = new PowerupManager();
+            
 
             playerManager = new PlayerManager(
                 spriteSheet,    
@@ -104,6 +104,8 @@ namespace Asteroid_Belt_Assault
                     0,
                     this.Window.ClientBounds.Width,
                     this.Window.ClientBounds.Height));
+
+            powerupManager = new PowerupManager(spriteSheet, playerManager);
 
             enemyManager = new EnemyManager(
                 spriteSheet,
@@ -200,6 +202,7 @@ namespace Asteroid_Belt_Assault
                     enemyManager.Update(gameTime);
                     explosionManager.Update(gameTime);
                     collisionManager.CheckCollisions();
+                    powerupManager.Update(gameTime);
 
                     if (playerManager.Destroyed)
                     {
@@ -227,7 +230,7 @@ namespace Asteroid_Belt_Assault
                     enemyManager.Update(gameTime);
                     playerManager.PlayerShotManager.Update(gameTime);
                     explosionManager.Update(gameTime);
-                    powerupManager.Update(gameTime);
+                    
 
                     if (playerDeathTimer >= playerDeathDelayTime)
                     {
