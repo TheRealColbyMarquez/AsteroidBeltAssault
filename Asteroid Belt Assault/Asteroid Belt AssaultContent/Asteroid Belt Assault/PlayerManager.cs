@@ -20,7 +20,7 @@ namespace Asteroid_Belt_Assault
 
         private Vector2 gunOffset = new Vector2(25, 10);
         private float shotTimer = 0.0f;
-        private float minShotTimer = 0.2f;
+        public float minShotTimer = 0.2f;
         private int playerRadius = 15;
         public ShotManager PlayerShotManager;
 
@@ -30,6 +30,7 @@ namespace Asteroid_Belt_Assault
             int frameCount,
             Rectangle screenBounds)
         {
+            
             playerSprite = new Sprite(
                 new Vector2(500, 500),
                 texture,

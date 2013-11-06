@@ -10,6 +10,9 @@ namespace Asteroid_Belt_Assault
     class PowerupManager
     {
         public Sprite speedPowerup;
+        public Sprite shieldPowerup;
+        public Sprite shotPowerup;
+        public Sprite freezePowerup;
         public Texture2D spriteSheet;
         public PlayerManager playerManager;
         
@@ -22,6 +25,14 @@ namespace Asteroid_Belt_Assault
 
         }
 
+        public void SpawnShotPowerup()
+        {
+            if (shotPowerup == null)
+                shotPowerup = new Sprite(new Vector2(20, 20), spriteSheet, new Rectangle(352, 135, 61, 68), new Vector2(50, 50));
+            else
+                shotPowerup.Location = new Vector2(500, 50);
+        }
+
         public void SpawnSpeedPowerup()
         {
             if (speedPowerup == null)
@@ -30,8 +41,36 @@ namespace Asteroid_Belt_Assault
                 speedPowerup.Location = new Vector2(500, 50);
          }
 
+
+
         public void Update(GameTime gameTime)
         {
+            //Shot powerup code
+            if (shotPowerup != null)
+            {
+                shotPowerup.Update(gameTime);
+
+                if (shotPowerup.IsCircleColliding(playerManager.playerSprite.Center, 15))
+                {
+                    SpawnShotPowerup();
+                    playerManager.minShotTimer = 0.09f;
+                    SoundManager.PlaySpeedSound();
+                }
+            }
+            if (playerManager.PlayerScore % 1500 == 0 && playerManager.PlayerScore > 0)
+            {
+                playerManager.PlayerScore += 100;
+                SpawnShotPowerup();
+            }
+
+            if (playerManager.Destroyed == true)
+            {
+                playerManager.minShotTimer = 0.2f;
+            }
+        
+
+
+            //Speed powerup code
             if (speedPowerup != null)
             {
                 speedPowerup.Update(gameTime);
@@ -61,6 +100,8 @@ namespace Asteroid_Belt_Assault
         {
             if (speedPowerup != null)
                 speedPowerup.Draw(spritebatch);
+            if (shotPowerup != null)
+                shotPowerup.Draw(spritebatch);
         }
     }
 }
