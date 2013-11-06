@@ -21,7 +21,7 @@ namespace Asteroid_Belt_Assault
         private static SoundEffect enemyShot;
         private static SoundEffect playerDead;
         private static Song menuMusic;
-        public static Song speedSound;
+        public static SoundEffect speedSound;
 
         private static Random rand = new Random();
 
@@ -53,6 +53,11 @@ namespace Asteroid_Belt_Assault
         public static void PlayMenuSong()
         {
             MediaPlayer.Play(menuMusic);
+        }
+
+        public static void PlaySpeedSound()
+        {
+            speedSound.Play();
         }
 
         public static void StopMenuSong()

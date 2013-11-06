@@ -6,6 +6,7 @@ Content\Sounds\Explosion3.xnb
 Content\Sounds\Explosion4.xnb
 Content\Sounds\Shot1.xnb
 Content\Sounds\Shot2.xnb
+Content\Sounds\speedSound.xnb
 Content\Fonts\Pericles14.xnb
 Content\Sounds\inceptionbutton.xnb
 Content\Sounds\titleMusic.xnb

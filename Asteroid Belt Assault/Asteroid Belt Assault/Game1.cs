@@ -179,13 +179,14 @@ namespace Asteroid_Belt_Assault
                 case GameStates.TitleScreen:
                     titleScreenTimer +=
                         (float)gameTime.ElapsedGameTime.TotalSeconds;
-
+                    
                     if (titleScreenTimer >= titleScreenDelayTime)
                     {
                         if ((Keyboard.GetState().IsKeyDown(Keys.Space)) ||
                             (GamePad.GetState(PlayerIndex.One).Buttons.A ==
                             ButtonState.Pressed))
                         {
+                            SoundManager.PlayMenuSong();
                             playerManager.LivesRemaining = playerStartingLives;
                             playerManager.PlayerScore = 0;
                             resetGame();

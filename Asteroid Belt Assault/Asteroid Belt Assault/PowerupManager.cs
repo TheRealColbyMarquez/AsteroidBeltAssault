@@ -9,11 +9,7 @@ namespace Asteroid_Belt_Assault
 {
     class PowerupManager
     {
-        private float powerupTime = 10f;
-        private float spawnPowerup = 20f;
-        private bool powerupEnabled = false;
-
-        public Sprite powerup;
+        public Sprite speedPowerup;
         public Texture2D spriteSheet;
         public PlayerManager playerManager;
         
@@ -23,30 +19,37 @@ namespace Asteroid_Belt_Assault
             this.spriteSheet = spriteSheet;
             this.playerManager = playerManager;
 
-            SpawnPowerup();
+
         }
 
-        public void SpawnPowerup()
+        public void SpawnSpeedPowerup()
         {
-           // powerup = new Sprite ( ... );
-           
-            powerup = new Sprite(new Vector2(20, 20), spriteSheet, new Rectangle(1, 343, 51, 37), new Vector2(50, 50));
-            powerup.Velocity =new  Vector2(50);
-            
-        }
+            if (speedPowerup == null)
+                speedPowerup = new Sprite(new Vector2(20, 20), spriteSheet, new Rectangle(1, 343, 51, 37), new Vector2(50, 50));
+            else
+                speedPowerup.Location = new Vector2(500, 50);
+         }
 
         public void Update(GameTime gameTime)
         {
-            if (powerup != null)
-                powerup.Update(gameTime);
-
-            if (powerup.IsCircleColliding(playerManager.playerSprite.Center, 15))
+            if (speedPowerup != null)
             {
-                powerup.Location = new Vector2(-500, -500);
-                playerManager.playerSpeed = 500f;
-                powerupEnabled = true;
-                
+                speedPowerup.Update(gameTime);
+
+                if (speedPowerup.IsCircleColliding(playerManager.playerSprite.Center, 15))
+                {
+                    speedPowerup.Location = new Vector2(-500, -500);
+                    playerManager.playerSpeed = 500f;
+                    SoundManager.PlaySpeedSound();
+                }
             }
+
+            if (playerManager.PlayerScore % 600 == 0 && playerManager.PlayerScore > 0)
+            {
+                playerManager.PlayerScore += 100;
+                SpawnSpeedPowerup();
+            }
+
 
             if (playerManager.Destroyed == true)
             {
@@ -56,8 +59,8 @@ namespace Asteroid_Belt_Assault
 
         public void Draw(SpriteBatch spritebatch)
         {
-            if (powerup != null)
-                powerup.Draw(spritebatch);
+            if (speedPowerup != null)
+                speedPowerup.Draw(spritebatch);
         }
     }
 }
