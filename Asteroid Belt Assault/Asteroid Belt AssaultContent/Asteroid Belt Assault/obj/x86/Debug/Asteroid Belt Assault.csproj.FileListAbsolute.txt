@@ -86,3 +86,9 @@ C:\Users\EAHSCS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Aster
 C:\Users\EAHSCS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Asteroid Belt AssaultContent\Asteroid Belt Assault\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\EAHSCS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Asteroid Belt AssaultContent\Asteroid Belt Assault\obj\x86\Debug\Asteroid Belt Assault.exe
 C:\Users\EAHSCS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Asteroid Belt AssaultContent\Asteroid Belt Assault\obj\x86\Debug\Asteroid Belt Assault.pdb
+C:\Users\EAHS CS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Asteroid Belt AssaultContent\Asteroid Belt Assault\bin\x86\Debug\Asteroid Belt Assault.exe
+C:\Users\EAHS CS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Asteroid Belt AssaultContent\Asteroid Belt Assault\bin\x86\Debug\Asteroid Belt Assault.pdb
+C:\Users\EAHS CS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Asteroid Belt AssaultContent\Asteroid Belt Assault\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\EAHS CS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Asteroid Belt AssaultContent\Asteroid Belt Assault\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\EAHS CS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Asteroid Belt AssaultContent\Asteroid Belt Assault\obj\x86\Debug\Asteroid Belt Assault.exe
+C:\Users\EAHS CS\Documents\GitHub\AsteroidBeltAssault\Asteroid Belt Assault\Asteroid Belt AssaultContent\Asteroid Belt Assault\obj\x86\Debug\Asteroid Belt Assault.pdb
